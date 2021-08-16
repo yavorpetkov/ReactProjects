@@ -2,7 +2,7 @@ import React from 'react';
 
 const Navbar = () => {
 	return (
-		<div>
+		<div className="container">
 			<h1>
 				<a href="#!">Weather Now</a>
 			</h1>
