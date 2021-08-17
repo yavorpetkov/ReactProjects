@@ -6,6 +6,14 @@ const Navbar = () => {
 			<h1>
 				<a href="#!">Weather Now</a>
 			</h1>
+			<ul>
+				<li>
+					<a href="#!">Home</a>
+				</li>
+				<li>
+					<a href="#!">About</a>
+				</li>
+			</ul>
 		</div>
 	);
 };
