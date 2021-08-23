@@ -1,2 +1,13 @@
 /* eslint-disable import/no-anonymous-default-export */
-export default (state, action) => {};
+import { SET_WEATHER } from '../Types';
+export default (state, action) => {
+	switch (action.type) {
+		case SET_WEATHER:
+			return {
+				...state,
+				tempC: action.payload
+			};
+		default:
+			break;
+	}
+};
