@@ -2,6 +2,7 @@ import React, { useReducer } from 'react';
 import axios from 'axios';
 import weatherContext from './weatherContext';
 import weatherReducer from './weatherReducer';
+import { SET_WEATHER } from '../Types';
 
 const WeatherState = (props) => {
 	const initialState = {
@@ -16,12 +17,17 @@ const WeatherState = (props) => {
 		const res = await axios.get(
 			`http://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_WEATHER_API_KEY}&q=Sofia&aqi=no`
 		);
-		console.log(res.data);
+		dispatch({
+			type: SET_WEATHER,
+			payload: res.data
+		});
 	};
 
 	return (
 		<weatherContext.Provider
 			value={{
+				city: state.city,
+				tempC: state.tempC,
 				getWeather
 			}}
 		>
