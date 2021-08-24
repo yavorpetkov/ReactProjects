@@ -7,7 +7,7 @@ import { SET_WEATHER } from '../Types';
 const WeatherState = (props) => {
 	const initialState = {
 		city: '',
-		tempC: []
+		tempC: ''
 	};
 
 	const [ state, dispatch ] = useReducer(weatherReducer, initialState);
