@@ -5,7 +5,7 @@ export default (state, action) => {
 		case SET_WEATHER:
 			return {
 				...state,
-				tempC: action.payload
+				stats: action.payload
 			};
 		default:
 			break;

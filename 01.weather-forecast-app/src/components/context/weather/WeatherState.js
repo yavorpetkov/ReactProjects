@@ -5,7 +5,7 @@ import weatherReducer from './weatherReducer';
 import { SET_WEATHER } from '../Types';
 const WeatherState = (props) => {
 	const initialState = {
-		city: '',
+		city: 'Sofia',
 		stats: {}
 	};
 

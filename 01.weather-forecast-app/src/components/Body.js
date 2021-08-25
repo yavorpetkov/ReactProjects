@@ -3,13 +3,11 @@ import WeatherContext from './context/weather/weatherContext';
 
 const Body = () => {
 	const weatherContext = useContext(WeatherContext);
+	const { getWeather } = weatherContext;
 
-	const onClick = () => {
-		weatherContext.getWeather();
-	};
 	return (
 		<div>
-			<button onClick={onClick}>state</button>
+			<button onClick={getWeather}>state</button>
 		</div>
 	);
 };
