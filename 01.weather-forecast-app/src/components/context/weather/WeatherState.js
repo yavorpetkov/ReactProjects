@@ -13,13 +13,17 @@ const WeatherState = (props) => {
 
 	// GET WEATHER
 	const getWeather = async () => {
-		const res = await axios.get(
-			`http://api.weatherapi.com/v1/current.json?key=04041e8748034907a3082946211908&q=Sofia&aqi=no`
-		);
-		dispatch({
-			type: SET_WEATHER,
-			payload: res.data
-		});
+		try {
+			const res = await axios.get(
+				`http://api.weatherapi.com/v1/current.json?key=04041e8748034907a3082946211908&q=Sofia&aqi=no`
+			);
+			dispatch({
+				type: SET_WEATHER,
+				payload: res.data
+			});
+		} catch (err) {
+			console.log('IN CATCH!!!', err);
+		}
 	};
 
 	return (
