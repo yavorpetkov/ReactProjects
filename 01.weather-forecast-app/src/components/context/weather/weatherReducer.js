@@ -5,8 +5,8 @@ export default (state, action) => {
 		case SET_WEATHER:
 			return {
 				...state,
-				city: action.payload.location.name,
-				stats: action.payload
+				city: `${action.payload.location.name}, ${action.payload.location.country}`,
+				stats: action.payload.current
 			};
 		default:
 			break;
