@@ -5,6 +5,7 @@ export default (state, action) => {
 		case SET_WEATHER:
 			return {
 				...state,
+				city: action.payload.location.name,
 				stats: action.payload
 			};
 		default:
