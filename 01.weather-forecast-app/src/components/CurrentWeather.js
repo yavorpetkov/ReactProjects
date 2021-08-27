@@ -1,9 +1,16 @@
-import React, { useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import WeatherContext from './context/weather/weatherContext';
 
 const CurrentWeather = () => {
 	const weatherContext = useContext(WeatherContext);
-	const { city, stats } = weatherContext;
+	const { getWeather, city, stats } = weatherContext;
+	useEffect(
+		() => {
+			getWeather();
+		},
+		// eslint-disable-next-line
+		[]
+	);
 
 	return (
 		<div>
