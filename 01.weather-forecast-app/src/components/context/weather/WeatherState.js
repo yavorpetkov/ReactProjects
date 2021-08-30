@@ -8,14 +8,14 @@ const WeatherState = (props) => {
 		city: '',
 		stats: {}
 	};
-
+	const weatherAPIKet = process.env.REACT_APP_WEATHER_API_KEY;
 	const [ state, dispatch ] = useReducer(weatherReducer, initialState);
 
 	// GET WEATHER
-	const getWeather = async () => {
+	const getWeather = async (city) => {
 		try {
 			const res = await axios.get(
-				`http://api.weatherapi.com/v1/current.json?key=04041e8748034907a3082946211908&q=Sofia&aqi=no`
+				`http://api.weatherapi.com/v1/current.json?key=${weatherAPIKet}&q=${city}&aqi=no`
 			);
 			dispatch({
 				type: SET_WEATHER,
