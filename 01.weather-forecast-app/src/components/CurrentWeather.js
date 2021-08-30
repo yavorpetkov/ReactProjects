@@ -6,7 +6,7 @@ const CurrentWeather = () => {
 	const { getWeather, city, stats } = weatherContext;
 	useEffect(
 		() => {
-			getWeather();
+			getWeather(`Sofia`);
 		},
 		// eslint-disable-next-line
 		[]

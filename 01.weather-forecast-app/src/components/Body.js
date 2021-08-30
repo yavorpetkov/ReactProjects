@@ -1,15 +1,12 @@
-import React, { useContext } from 'react';
-import WeatherContext from './context/weather/weatherContext';
+import React from 'react';
+
+import WeatherForm from './WeatherForm';
 import CurrentWeather from './CurrentWeather';
 
 const Body = () => {
-	const weatherContext = useContext(WeatherContext);
-	const { getWeather } = weatherContext;
-
 	return (
-		<div>
-			<button onClick={getWeather}>state</button>
-
+		<div className="container">
+			<WeatherForm />
 			<CurrentWeather />
 		</div>
 	);
