@@ -25,7 +25,7 @@ const WeatherForm = () => {
 			<h1>
 				<form onSubmit={onSubmit}>
 					<input type="text" name="text" placeholder="Search City..." value={text} onChange={onChange} />
-					<input type="date" name="" id="" />
+					<input type="date" name="date" />
 					<button type="submit">Search</button>
 				</form>
 			</h1>
