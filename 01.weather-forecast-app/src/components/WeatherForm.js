@@ -14,7 +14,6 @@ const WeatherForm = () => {
 	};
 
 	const onChange = (e) => {
-		// use brackets and e.target.name to shorten it if there is more than 1 input
 		setText(e.target.value);
 	};
 
