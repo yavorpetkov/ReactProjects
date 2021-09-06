@@ -20,7 +20,7 @@ const WeatherForm = () => {
 	let dateNew = moment(new Date()).format('YYYY-MM-DD');
 	console.log(dateNew);
 	return (
-		<div>
+		<div className="container">
 			<h1>
 				<form onSubmit={onSubmit}>
 					<input type="text" name="text" placeholder="Search City..." value={text} onChange={onChange} />
