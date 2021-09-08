@@ -15,7 +15,7 @@ const CurrentWeather = () => {
 	return (
 		<div className="container">
 			<h1>Current Weather in: {city}</h1>
-			{stats.temp_c}
+			<h2>{stats.temp_c}</h2>
 		</div>
 	);
 };
