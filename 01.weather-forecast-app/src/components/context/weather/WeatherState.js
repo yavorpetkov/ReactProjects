@@ -25,12 +25,16 @@ const WeatherState = (props) => {
 		}
 	};
 
+	// SET HOURLY WEATHER
+	const hourlyWeather = async () => {};
+
 	return (
 		<weatherContext.Provider
 			value={{
 				city: state.city,
 				stats: state.stats,
-				getWeather
+				getWeather,
+				hourlyWeather
 			}}
 		>
 			{props.children}
