@@ -2,7 +2,7 @@ import React, { useReducer } from 'react';
 import axios from 'axios';
 import weatherContext from './weatherContext';
 import weatherReducer from './weatherReducer';
-import { SET_WEATHER } from '../Types';
+import { SET_WEATHER, HOURLY_WEATHER } from '../Types';
 const WeatherState = (props) => {
 	const initialState = {
 		city: '',
@@ -14,7 +14,8 @@ const WeatherState = (props) => {
 	const getWeather = async (city) => {
 		try {
 			const res = await axios.get(
-				`http://api.weatherapi.com/v1/current.json?key=04041e8748034907a3082946211908&q=${city}&aqi=no`
+				`http://api.weatherapi.com/v1/current.json?key=${process.env
+					.REACT_APP_WEATHER_API_KEY}&q=${city}&aqi=no`
 			);
 			dispatch({
 				type: SET_WEATHER,
@@ -26,7 +27,20 @@ const WeatherState = (props) => {
 	};
 
 	// SET HOURLY WEATHER
-	const hourlyWeather = async () => {};
+	const hourlyWeather = async (city, days) => {
+		try {
+			const res = await axios.get(
+				`http://api.weatherapi.com/v1/forecast.json?key=${process.env
+					.REACT_APP_WEATHER_API_KEY}&q=${city}&${days}=1&aqi=no&alerts=no`
+			);
+			dispatch({
+				type: HOURLY_WEATHER,
+				payload: res.data
+			});
+		} catch (err) {
+			console.log('IN CATCH!!!', err);
+		}
+	};
 
 	return (
 		<weatherContext.Provider

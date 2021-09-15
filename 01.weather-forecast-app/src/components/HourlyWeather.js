@@ -3,7 +3,7 @@ import React from 'react';
 const HourlyWeather = () => {
 	return (
 		<div>
-			<h1 />
+			<h1>Weather</h1>
 		</div>
 	);
 };
