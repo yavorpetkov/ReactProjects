@@ -6,6 +6,7 @@ import { SET_WEATHER, HOURLY_WEATHER } from '../Types';
 const WeatherState = (props) => {
 	const initialState = {
 		city: '',
+		hourly: {},
 		stats: {}
 	};
 	const [ state, dispatch ] = useReducer(weatherReducer, initialState);
