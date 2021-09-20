@@ -1,2 +1,1 @@
 export const SET_WEATHER = 'SET_WEATHER';
-export const HOURLY_WEATHER = 'HOURLY_WEATHER';
